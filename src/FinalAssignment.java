@@ -14,18 +14,11 @@
        // APPLE BANANA CHERRY GRAPES KIWI MELON ORANGE PINEAPPLE STRAWBERRY WATERMELON
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 //*Your output should look something like this:
-
-
-
 public class FinalAssignment {
     public static void main(String[] args) {
-
-
-
-
-
 
         String dictionary [] = new String[10];
         Scanner scanner = new Scanner(System.in);
@@ -39,5 +32,16 @@ public class FinalAssignment {
 
         System.out.println(Arrays.toString(dictionary));
 
+        // Sorts str_Array in ascending order
+        Arrays.sort (dictionary);
+        System.out.printf("Dictionary sorted in ascending order: \n%s\n\n",
+                Arrays.toString(dictionary));
+
+        // Sorts str_Array in descending order
+        Arrays.sort(dictionary, Collections.reverseOrder());
+
+        System.out.printf("Array sorted in descending order : \n%s\n\n",
+                Arrays.toString(dictionary));
     }
 }
+
