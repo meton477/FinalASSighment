@@ -20,7 +20,8 @@ import java.util.Scanner;
 public class FinalAssignment {
     public static void main(String[] args) {
 
-        String dictionary [] = new String[10];
+
+        String dictionary[] = new String[10];
         Scanner scanner = new Scanner(System.in);
 
         for (int i = 0; i < dictionary.length; i++) {
@@ -32,16 +33,38 @@ public class FinalAssignment {
 
         System.out.println(Arrays.toString(dictionary));
 
-        // Sorts str_Array in ascending order
-        Arrays.sort (dictionary);
-        System.out.printf("Dictionary sorted in ascending order: \n%s\n\n",
-                Arrays.toString(dictionary));
+        int i, j;
+        String t;
+        int l = dictionary.length;
+        for (i = 0; i < (l - 1); i++) {
+            for (j = 0; j < (l - 1) - i; j++) {
+                if (dictionary[j].compareTo(dictionary[j + 1]) > 0) {
+                    t = dictionary[j];
+                    dictionary[j] = dictionary[j + 1];
+                    dictionary[j + 1] = t;
+                }
+            }
+        }
 
-        // Sorts str_Array in descending order
-        Arrays.sort(dictionary, Collections.reverseOrder());
+        System.out.println(Arrays.toString(dictionary));
 
-        System.out.printf("Array sorted in descending order : \n%s\n\n",
-                Arrays.toString(dictionary));
+
+        int y, u;
+        String o;
+        for (y = 0; y < (l - 1); y++) {
+            for (u = 0; u < (l - 1) - y; u++) {
+                if (dictionary[u].compareTo(dictionary[u + 1]) < 0) {
+                    o = dictionary[u];
+                    dictionary[u] = dictionary[u + 1];
+                    dictionary[u + 1] = o;
+                }
+            }
+        }
+
+        System.out.println(Arrays.toString(dictionary));
+
+        System.out.println(Arrays.toString(dictionary).toUpperCase());
+
     }
-}
 
+}
